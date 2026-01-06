@@ -1,0 +1,1601 @@
+/* assets/css/style.css - WordPress 风格主题 */
+:root {
+    --wp-primary: #2271b1;
+    --wp-primary-dark: #135e96;
+    --wp-secondary: #f6f7f7;
+    --wp-text: #2c3338;
+    --wp-text-light: #50575e;
+    --wp-border: #c3c4c7;
+    --wp-light: #f0f0f1;
+    --wp-success: #00a32a;
+    --wp-warning: #dba617;
+    --wp-danger: #d63638;
+    
+    /* 新增渐变色彩 */
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-success: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+}
+
+/* 基础重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--wp-text);
+    background-color: #fff;
+}
+
+/* 容器 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* 导航栏 */
+.navbar-dark.bg-dark {
+    background-color: var(--wp-text) !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.navbar-nav .nav-link {
+    color: rgba(255,255,255,0.8) !important;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: white !important;
+}
+
+/* 主内容区域 */
+.main-content {
+    min-height: calc(100vh - 200px);
+}
+
+/* 卡片样式 */
+.card {
+    border: 1px solid var(--wp-border);
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    background-color: var(--wp-light);
+    border-bottom: 1px solid var(--wp-border);
+    padding: 1rem 1.25rem;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+/* 按钮样式 */
+.btn {
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--wp-primary);
+    border-color: var(--wp-primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--wp-primary-dark);
+    border-color: var(--wp-primary-dark);
+}
+
+.btn-outline-primary {
+    color: var(--wp-primary);
+    border-color: var(--wp-primary);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--wp-primary);
+    border-color: var(--wp-primary);
+}
+
+/* 表格样式 */
+.table {
+    border: 1px solid var(--wp-border);
+}
+
+.table th {
+    background-color: var(--wp-light);
+    border-bottom: 2px solid var(--wp-border);
+    font-weight: 600;
+}
+
+/* 表单样式 */
+.form-control {
+    border: 1px solid var(--wp-border);
+    border-radius: 4px;
+}
+
+.form-control:focus {
+    border-color: var(--wp-primary);
+    box-shadow: 0 0 0 2px rgba(34, 113, 177, 0.2);
+}
+
+/* 警告框 */
+.alert {
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
+
+.alert-success {
+    background-color: #d1f7c4;
+    border-color: #b1e19a;
+    color: #0e5b27;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+/* 徽章 */
+.badge {
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+/* 页脚 */
+.site-footer {
+    background-color: var(--wp-text) !important;
+}
+
+.site-footer a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: white;
+}
+
+/* 产品卡片 */
+.workshop-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.workshop-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.workshop-image-placeholder {
+    background: linear-gradient(135deg, var(--wp-light), #e0e0e0);
+    border-radius: 4px 4px 0 0;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 面包屑导航 */
+.breadcrumb {
+    background-color: var(--wp-light);
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+}
+
+.breadcrumb-item a {
+    color: var(--wp-primary);
+    text-decoration: none;
+}
+
+.breadcrumb-item.active {
+    color: var(--wp-text-light);
+}
+
+/* 英雄区域 */
+.hero-section {
+    background: linear-gradient(135deg, var(--wp-primary), var(--wp-primary-dark));
+    color: white;
+    padding: 4rem 0;
+    margin-bottom: 3rem;
+}
+
+.hero-section h1 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* 分类区域 */
+.category-card {
+    background: white;
+    border: 1px solid var(--wp-border);
+    border-radius: 4px;
+    padding: 2rem 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+    color: inherit;
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-color: var(--wp-primary);
+    color: inherit;
+    text-decoration: none;
+}
+
+/* 统计卡片 */
+.stat-card {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.stat-card i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   产品详情页面样式 - products/details.php
+   ========================================================================== */
+
+.workshop-detail-section {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 40px 0;
+    margin-bottom: 30px;
+}
+
+.workshop-detail-content {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.workshop-image-container {
+    height: 500px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.workshop-detail-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.workshop-image-placeholder {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--wp-light);
+    color: var(--wp-text-light);
+}
+
+.workshop-info {
+    padding: 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.workshop-title {
+    color: var(--wp-text);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0;
+    flex: 1;
+    margin-right: 15px;
+}
+
+.discount-badge {
+    background: var(--wp-danger);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.badges-section {
+    margin-bottom: 25px;
+}
+
+.badge-level {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.badge-category {
+    background: var(--wp-light);
+    color: var(--wp-text-light);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.section-divider {
+    height: 2px;
+    background: var(--wp-border);
+    margin: 25px 0;
+}
+
+.description-section {
+    margin-bottom: 30px;
+}
+
+.description-title {
+    color: var(--wp-text);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.workshop-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--wp-text-light);
+    margin: 0;
+}
+
+.workshop-meta-section {
+    margin-bottom: 30px;
+}
+
+.meta-title {
+    color: var(--wp-text);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.workshop-meta-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: var(--wp-light);
+    border-radius: 8px;
+    border-left: 4px solid var(--wp-primary);
+}
+
+.meta-item i {
+    color: var(--wp-primary);
+    font-size: 1.2rem;
+    width: 20px;
+    text-align: center;
+}
+
+.meta-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: var(--wp-text);
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+.meta-value {
+    color: var(--wp-text-light);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.price-section-detail {
+    background: var(--wp-light);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border-left: 4px solid var(--wp-primary);
+}
+
+.price-title {
+    color: var(--wp-text);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.price-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.current-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--wp-primary);
+}
+
+.original-price {
+    font-size: 1.3rem;
+    text-decoration: line-through;
+    color: var(--wp-text-light);
+    opacity: 0.7;
+}
+
+.saving-amount {
+    background: var(--wp-success);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.btn-primary-theme {
+    background: var(--gradient-primary);
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    color: white;
+    text-align: center;
+}
+
+.btn-primary-theme:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    color: white;
+}
+
+.btn-outline-theme {
+    border: 2px solid var(--wp-primary);
+    color: var(--wp-primary);
+    background: transparent;
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-outline-theme:hover {
+    background: var(--wp-primary);
+    color: white;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .workshop-image-container {
+        height: 300px;
+    }
+    
+    .workshop-info {
+        padding: 25px;
+    }
+    
+    .workshop-title {
+        font-size: 1.6rem;
+    }
+    
+    .title-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .discount-badge {
+        align-self: flex-start;
+    }
+    
+    .current-price {
+        font-size: 1.6rem;
+    }
+    
+    .original-price {
+        font-size: 1.1rem;
+    }
+    
+    .price-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+/* ==========================================================================
+   购物车页面样式 - cart/index.php
+   ========================================================================== */
+
+.cart-hero {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 40px 0;
+    margin-bottom: 30px;
+}
+
+.cart-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: none;
+    overflow: hidden;
+}
+
+.cart-card .card-header {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    padding: 20px 25px;
+}
+
+.cart-item {
+    border-bottom: 2px solid var(--wp-light);
+    padding: 25px 0;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.workshop-image-cart {
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.workshop-image-cart i {
+    font-size: 1.5rem;
+}
+
+.btn-cart-primary {
+    background: var(--gradient-primary);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.btn-cart-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    color: white;
+}
+
+.btn-cart-outline {
+    border: 2px solid var(--wp-primary);
+    color: var(--wp-primary);
+    background: transparent;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.btn-cart-outline:hover {
+    background: var(--wp-primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-cart-danger {
+    border: 2px solid var(--wp-danger);
+    color: var(--wp-danger);
+    background: transparent;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.btn-cart-danger:hover {
+    background: var(--wp-danger);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.summary-card {
+    background: var(--wp-light);
+    border: none;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.summary-title {
+    color: var(--wp-text);
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--wp-border);
+}
+
+.price-highlight {
+    color: var(--wp-primary);
+    font-weight: 700;
+}
+
+.empty-cart-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: none;
+    padding: 50px 30px;
+    text-align: center;
+}
+
+.empty-cart-icon {
+    color: var(--wp-text-light);
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.secure-badge {
+    background: var(--gradient-success);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   结账页面样式 - cart/checkout.php
+   ========================================================================== */
+
+.checkout-hero {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 40px 0;
+    margin-bottom: 30px;
+}
+
+.checkout-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: none;
+    overflow: hidden;
+}
+
+.checkout-card .card-header {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    padding: 20px 25px;
+}
+
+.checkout-card .card-header h5 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.section-title {
+    color: var(--wp-text);
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--wp-light);
+}
+
+.form-control:read-only {
+    background-color: var(--wp-light);
+    border-color: var(--wp-border);
+}
+
+.btn-checkout-primary {
+    background: var(--gradient-primary);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.btn-checkout-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    color: white;
+}
+
+.btn-checkout-outline {
+    border: 2px solid var(--wp-primary);
+    color: var(--wp-primary);
+    background: transparent;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-checkout-outline:hover {
+    background: var(--wp-primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.table-custom th {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    font-weight: 600;
+    padding: 15px;
+}
+
+.table-custom td {
+    padding: 15px;
+    vertical-align: middle;
+    border-color: var(--wp-light);
+}
+
+.total-amount {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.success-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: none;
+    padding: 40px;
+    text-align: center;
+}
+
+.success-icon {
+    color: var(--wp-success);
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.breadcrumb-custom {
+    background: transparent;
+    padding: 0;
+}
+
+.breadcrumb-custom .breadcrumb-item a {
+    color: var(--wp-primary);
+    text-decoration: none;
+}
+
+.breadcrumb-custom .breadcrumb-item.active {
+    color: var(--wp-text-light);
+}
+
+.help-card {
+    background: var(--wp-light);
+    border: none;
+    border-radius: 10px;
+}
+
+.help-card .card-body {
+    padding: 25px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 2rem 0;
+        text-align: center;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding: 0 10px;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .workshop-info {
+        padding: 25px;
+    }
+    
+    .workshop-title {
+        font-size: 2rem;
+    }
+    
+    .workshop-meta-grid {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    
+    .price-current {
+        font-size: 2rem;
+    }
+    
+    .cart-item .row {
+        text-align: center;
+    }
+    
+    .cart-item .col-md-2.text-end {
+        text-align: center !important;
+        margin-top: 15px;
+    }
+}
+
+/* 工具类 */
+.text-primary {
+    color: var(--wp-primary) !important;
+}
+
+.bg-primary {
+    background-color: var(--wp-primary) !important;
+}
+
+.border-primary {
+    border-color: var(--wp-primary) !important;
+}
+
+/* 开源集成横幅 */
+.integration-banner {
+    background: var(--wp-primary-dark);
+    color: white;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+/* 社区CTA */
+.community-cta {
+    background: linear-gradient(135deg, var(--wp-primary), var(--wp-primary-dark));
+    color: white;
+    border-radius: 4px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+.quantity-controls {
+    max-width: 150px;
+}
+
+.quantity-input {
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+}
+
+.empty-cart-card {
+    background: #f8f9fa;
+    border-radius: 1rem;
+    padding: 4rem 2rem;
+}
+
+.sticky-top {
+    position: sticky;
+    z-index: 1020;
+}
+
+.btn-cart-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+}
+
+.btn-cart-primary:hover {
+    background: #0056b3;
+    color: white;
+}
+/* ==========================================================================
+   Workshops Page Shopping Cart Styles
+   ========================================================================== */
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quantity-input {
+    width: 60px !important;
+    text-align: center;
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+}
+
+.quantity-controls .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+.cart-items {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.cart-item {
+    border-bottom: 1px solid #e9ecef;
+    padding: 15px 0;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.order-summary {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.sticky-top {
+    position: sticky;
+    top: 20px;
+}
+
+/* Success message styles */
+.alert-success {
+    background-color: #d1f7c4;
+    border-color: #b1e19a;
+    color: #0e5b27;
+}
+
+/* Empty cart state */
+.text-center.py-4 {
+    padding: 2rem 1rem;
+}
+
+.text-center.py-4 i {
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+/* ===== 暗色变量覆盖 ===== */
+html[data-theme="dark"]{
+    --wp-primary: #63b3ed;
+    --wp-primary-dark: #3182ce;
+    --wp-secondary: #1d2327;
+    --wp-text: #e2e8f0;
+    --wp-text-light: #a0aec0;
+    --wp-border: #4a5568;
+    --wp-light: #2d3748;
+    --wp-success: #48bb78;
+    --wp-warning: #ed8936;
+    --wp-danger: #f56565;
+}
+
+/* 全局背景 & 文字 */
+html[data-theme="dark"] body{
+    background: #1a202c;
+    color: var(--wp-text);
+}
+
+/* 导航栏 */
+html[data-theme="dark"] .navbar-dark.bg-dark{ background: #1a202c !important; }
+
+/* 卡片 */
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .category-card,
+html[data-theme="dark"] .stat-card,
+html[data-theme="dark"] .empty-cart-card,
+html[data-theme="dark"] .summary-card,
+html[data-theme="dark"] .checkout-card,
+html[data-theme="dark"] .success-card,
+html[data-theme="dark"] .help-card{
+    background: var(--wp-light);
+    border-color: var(--wp-border);
+}
+
+/* 表格 */
+html[data-theme="dark"] .table{
+    background: var(--wp-light);
+    color: var(--wp-text);
+    border-color: var(--wp-border);
+}
+html[data-theme="dark"] .table th{ background: var(--wp-light); color: var(--wp-text); }
+html[data-theme="dark"] .table td{ border-color: var(--wp-border); }
+
+/* 表单控件 */
+html[data-theme="dark"] .form-control,
+html[data-theme="dark"] .quantity-input{
+    background: var(--wp-light);
+    color: var(--wp-text);
+    border-color: var(--wp-border);
+}
+
+/* 按钮 */
+html[data-theme="dark"] .btn-primary{ background: var(--wp-primary); border-color: var(--wp-primary); }
+html[data-theme="dark"] .btn-outline-primary{ color: var(--wp-primary); border-color: var(--wp-primary); }
+html[data-theme="dark"] .btn-outline-primary:hover{ background: var(--wp-primary); color: #fff; }
+
+html[data-theme="dark"] .btn-cart-primary{ background: var(--wp-primary); }
+html[data-theme="dark"] .btn-cart-outline{ color: var(--wp-primary); border-color: var(--wp-primary); }
+html[data-theme="dark"] .btn-cart-danger{ color: var(--wp-danger); border-color: var(--wp-danger); }
+
+html[data-theme="dark"] .btn-checkout-primary{ background: var(--wp-primary); }
+html[data-theme="dark"] .btn-checkout-outline{ color: var(--wp-primary); border-color: var(--wp-primary); }
+
+/* 徽章 */
+html[data-theme="dark"] .badge-level{ background: var(--wp-primary); color: #fff; }
+html[data-theme="dark"] .badge-category{ background: var(--wp-light); color: var(--wp-text-light); }
+
+/* 警告框 */
+html[data-theme="dark"] .alert-success{ background: #22543d; color: #c6f6d5; border-color: #22543d; }
+html[data-theme="dark"] .alert-danger{ background: #742a2a; color: #fed7d7; border-color: #742a2a; }
+
+/* 面包屑 */
+html[data-theme="dark"] .breadcrumb{ background: var(--wp-light); }
+html[data-theme="dark"] .breadcrumb-item.active{ color: var(--wp-text-light); }
+
+/* 页脚 */
+html[data-theme="dark"] .site-footer{ background: #1a202c !important; }
+
+/* 分割线 */
+html[data-theme="dark"] .section-divider{ background: var(--wp-border); }
+/* 1. 切换按钮变大 + 固定右下角 */
+.theme-toggle{
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    bottom: 25px;
+    right: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.4);
+}
+
+/* 2. 低饱和暗蓝 + 阴影 */
+:root{
+    --wp-primary: #4a7fc8;        /* 降低饱和度的暗蓝 */
+    --wp-primary-dark: #3a6bb0;
+}
+html[data-theme="dark"]{
+    --wp-primary: #3a6bb0;
+    --wp-primary-dark: #2a5799;
+}
+
+/* 所有亮蓝元素统一变量 */
+.btn-primary,
+.btn-cart-primary,
+.btn-checkout-primary,
+.badge-level,
+.table-custom th,
+.workshop-image-cart,
+.section-divider,
+.hero-section,
+.checkout-hero,
+.cart-hero,
+.workshop-detail-section{
+    background: var(--wp-primary) !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,.15);
+}
+
+/* 3. Featured Workshops 背景变量化 */
+.featured-section{
+    background: var(--wp-light);
+    padding: 4rem 0;
+}
+html[data-theme="dark"] .featured-section{
+    background: var(--wp-card-bg, #2d3748);
+}
+/* ===== 暗色变量覆盖（普通用户页） ===== */
+html[data-theme="dark"]{
+    --wp-primary: #3a7bd5;          /* 低饱和暗蓝 */
+    --wp-primary-dark: #2a65b0;
+    --wp-secondary: #1d2327;
+    --wp-text: #e2e8f0;
+    --wp-text-light: #a0aec0;
+    --wp-border: #4a5568;
+    --wp-light: #2d3748;
+    --wp-success: #48bb78;
+    --wp-warning: #ed8936;
+    --wp-danger: #f56565;
+    
+    /* 渐变也换成暗蓝 */
+    --gradient-primary: linear-gradient(135deg, #3a7bd5 0%, #2a65b0 100%);
+    --gradient-success: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+}
+
+/* 全局背景 & 文字 */
+html[data-theme="dark"] body{
+    background: #1a202c;
+    color: var(--wp-text);
+}
+
+/* 导航栏 */
+html[data-theme="dark"] .navbar-dark.bg-dark{ background: #1a202c !important; }
+
+/* 卡片统一暗色 */
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .category-card,
+html[data-theme="dark"] .stat-card,
+html[data-theme="dark"] .empty-cart-card,
+html[data-theme="dark"] .summary-card,
+html[data-theme="dark"] .checkout-card,
+html[data-theme="dark"] .success-card,
+html[data-theme="dark"] .help-card,
+html[data-theme="dark"] .cart-card,
+html[data-theme="dark"] .workshop-detail-content,
+html[data-theme="dark"] .workshop-image-placeholder{
+    background: var(--wp-light);
+    border-color: var(--wp-border);
+}
+
+/* 表格 */
+html[data-theme="dark"] .table{
+    background: var(--wp-light);
+    color: var(--wp-text);
+    border-color: var(--wp-border);
+}
+html[data-theme="dark"] .table th{ background: var(--wp-light); color: var(--wp-text); }
+html[data-theme="dark"] .table td{ border-color: var(--wp-border); }
+
+/* 表单控件 */
+html[data-theme="dark"] .form-control,
+html[data-theme="dark"] .quantity-input{
+    background: var(--wp-light);
+    color: var(--wp-text);
+    border-color: var(--wp-border);
+}
+
+/* 按钮统一暗色变量 */
+html[data-theme="dark"] .btn-primary,
+html[data-theme="dark"] .btn-cart-primary,
+html[data-theme="dark"] .btn-checkout-primary{
+    background: var(--wp-primary);
+    border-color: var(--wp-primary);
+    box-shadow: 0 4px 10px rgba(0,0,0,.15);
+}
+html[data-theme="dark"] .btn-outline-primary,
+html[data-theme="dark"] .btn-cart-outline,
+html[data-theme="dark"] .btn-checkout-outline{
+    color: var(--wp-primary);
+    border-color: var(--wp-primary);
+}
+html[data-theme="dark"] .btn-cart-danger{
+    color: var(--wp-danger);
+    border-color: var(--wp-danger);
+}
+
+/* 徽章 */
+html[data-theme="dark"] .badge-level{ background: var(--wp-primary); color: #fff; }
+html[data-theme="dark"] .badge-category{ background: var(--wp-light); color: var(--wp-text-light); }
+
+/* 警告框 */
+html[data-theme="dark"] .alert-success{ background: #22543d; color: #c6f6d5; border-color: #22543d; }
+html[data-theme="dark"] .alert-danger{ background: #742a2a; color: #fed7d7; border-color: #742a2a; }
+
+/* 页脚 */
+html[data-theme="dark"] .site-footer{ background: #1a202c !important; }
+
+/* 分割线 */
+html[data-theme="dark"] .section-divider{ background: var(--wp-border); }
+
+/* ===== Featured Workshops 背景变量化 ===== */
+.featured-workshops{                  /* 给外层加类，方便控制 */
+    background: var(--wp-light);
+    padding: 4rem 0;
+}
+html[data-theme="dark"] .featured-workshops{
+    background: var(--wp-light);       /* 已变量，暗色自动变#2d3748 */
+}
+
+/* ===== 右下角切换按钮 ===== */
+.theme-toggle{
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 9999;
+    padding: 8px 14px;
+    border: 1px solid var(--wp-border);
+    background: var(--wp-light);
+    color: var(--wp-text);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s;
+    text-decoration: none;
+    user-select: none;
+}
+.theme-toggle:hover{
+    border-color: var(--wp-primary);
+    color: var(--wp-primary);
+}
+html[data-theme="dark"] .theme-toggle{
+    background: var(--wp-light);
+    color: var(--wp-text);
+}
+/* 干掉 bg-light 的强制白色 */
+html[data-theme="dark"] .bg-light{
+    background: var(--wp-light) !important;
+}
+/* ===== about.php 暗色补完 ===== */
+
+/* 1. 标题背景与“Our Mission”一致（变量化） */
+.hero-section{
+    background: var(--wp-light);          /* 亮面 #f0f0f1 暗面 #2d3748 */
+    color: var(--wp-text);                /* 亮面 #2c3338 暗面 #e2e8f0 */
+}
+html[data-theme="dark"] .hero-section{
+    background: var(--wp-light);
+    color: var(--wp-text);
+}
+
+/* 2. 描述文字亮面黑、暗面灰白色 */
+.hero-section .lead,
+.hero-section .text-muted{
+    color: var(--wp-text-light) !important;   /* 亮面 #50575e 暗面 #a0aec0 */
+}
+
+/* 3. 干掉 bg-light 强制白色 */
+html[data-theme="dark"] .bg-light{
+    background: var(--wp-light) !important;
+}
+
+/* 4. placeholder 变量化 */
+.about-image-placeholder{
+    background: var(--wp-primary);
+    color: #fff;
+}
+html[data-theme="dark"] .about-image-placeholder{
+    background: var(--wp-primary-dark);
+}
+
+/* 5. 卡片/按钮/图标统一变量 */
+html[data-theme="dark"] .value-card,
+html[data-theme="dark"] .team-card,
+html[data-theme="dark"] .process-step,
+html[data-theme="dark"] .stat-card{
+    background: var(--wp-light);
+    border-color: var(--wp-border);
+    color: var(--wp-text);
+}
+
+html[data-theme="dark"] .value-icon,
+html[data-theme="dark"] .team-avatar,
+html[data-theme="dark"] .step-number{
+    background: var(--wp-primary) !important;
+    color: #fff;
+}
+
+/* 6. 地图区域卡片 */
+html[data-theme="dark"] .map-section .card{
+    background: var(--wp-light);
+    border-color: var(--wp-border);
+}
+html[data-theme="dark"] .map-section h4,
+html[data-theme="dark"] .map-section h6{
+    color: var(--wp-text);
+}
+html[data-theme="dark"] .map-section .text-muted{
+    color: var(--wp-text-light) !important;
+}
+/* ===== 修复 about.php 内联样式造成的文字消失 ===== */
+/* 强制让文字用变量色，亮面黑、暗面灰白色 */
+.about-php .hero-section *{          /* 给 about.php 的 hero 包一层类，避免影响其他页 */
+    color: var(--wp-text) !important; /* 优先级高于内联 style="" */
+}
+.about-php .hero-section .lead,
+.about-php .hero-section .text-muted{
+    color: var(--wp-text-light) !important;
+}
+
+/* 背景变量化（覆盖内联渐变） */
+.about-php .hero-section{
+    background: var(--wp-light) !important; /* 亮 #f0f0f1 暗 #2d3748 */
+}
+
+/* 暗面微调 */
+html[data-theme="dark"] .about-php .hero-section{
+    background: var(--wp-light) !important;
+    color: var(--wp-text) !important;
+}
+/* ========== about.php 文字消失急救包 ========== */
+/* 1. 强制让标题、正文、副标题都使用变量色，亮面黑、暗面灰白色 */
+.about-php .hero-section,
+.about-php .hero-section h1,
+.about-php .hero-section .lead,
+.about-php .hero-section .text-muted{
+    color: var(--wp-text) !important;
+}
+
+/* 2. 暗色下自动反转 */
+html[data-theme="dark"] .about-php .hero-section,
+html[data-theme="dark"] .about-php .hero-section h1,
+html[data-theme="dark"] .about-php .hero-section .lead,
+html[data-theme="dark"] .about-php .hero-section .text-muted{
+    color: var(--wp-text) !important;   /* 灰白色 */
+}
+
+/* 3. 干掉内联背景渐变，统一变量背景 */
+.about-php .hero-section{
+    background: var(--wp-light) !important;
+}
+html[data-theme="dark"] .about-php .hero-section{
+    background: var(--wp-light) !important;
+}
+
+/* 4. 图标/按钮也变量化 */
+.about-php .value-icon,
+.about-php .team-avatar,
+.about-php .step-number{
+    background: var(--wp-primary) !important;
+    color: #fff !important;
+}
+/* ===== 终极覆盖：亮面黑字 / 暗面灰白字 ===== */
+.about-php-fix,
+.about-php-fix h1,
+.about-php-fix .lead,
+.about-php-fix .text-muted{
+    color: #000 !important;              /* 亮面强制黑 */
+    background: #f8f9fa !important;      /* 亮面强制浅灰底 */
+}
+html[data-theme="dark"] .about-php-fix,
+html[data-theme="dark"] .about-php-fix h1,
+html[data-theme="dark"] .about-php-fix .lead,
+html[data-theme="dark"] .about-php-fix .text-muted{
+    color: #e2e8f0 !important;           /* 暗面灰白字 */
+    background: #2d3748 !important;      /* 暗面深卡底 */
+}
+/* ===== feedback.php 暗色补完 ===== */
+
+/* 1. 标题提亮（变量主色） */
+.about-php-fix .hero-section h1,               /* 兼容你之前加的类 */
+.feedback-section h2{                           /* 表单区标题 */
+    color: var(--wp-primary) !important;
+}
+
+/* 2. 表单区域变量化 */
+.feedback-section{
+    background: var(--wp-light) !important;    /* 亮#f0f0f1 暗#2d3748 */
+    border: 1px solid var(--wp-border);
+}
+html[data-theme="dark"] .feedback-section{
+    background: var(--wp-light) !important;
+    border-color: var(--wp-border);
+}
+
+/* 3. 输入框/按钮暗色化 */
+.feedback-section .form-group input,
+.feedback-section .form-group textarea{
+    background: var(--wp-light);
+    color: var(--wp-text);
+    border-color: var(--wp-border);
+}
+.feedback-section .form-group label{
+    color: var(--wp-text);
+}
+
+/* 4. 提交按钮变量主色 */
+.feedback-section .submit-btn{
+    background: var(--wp-primary);
+    border-color: var(--wp-primary);
+}
+.feedback-section .submit-btn:hover{
+    background: var(--wp-primary-dark);
+    border-color: var(--wp-primary-dark);
+}
+
+/* 5. 成功/错误提示条暗色化 */
+html[data-theme="dark"] .message.success{ background: #22543d; color: #c6f6d5; border-color: #22543d; }
+html[data-theme="dark"] .message.error{   background: #742a2a; color: #fed7d7; border-color: #742a2a; }
+/* ===== 通用表格暗色一键方案 ===== */
+
+/* 1. 表格容器变量背景 + 圆角 */
+.table-container,                      /* 你给论坛贴子包的外层 */
+.subscribers-table,                    /* list.php 表格 */
+.feedback-section,                     /* feedback.php 整块表单区 */
+.recruitment-form-wrapper,             /* recruitment.php 整块表单区 */
+.posts-container,                      /* forum.php 贴子列表 */
+.reply-form-container{                 /* forum.php 回复框 */
+    background: var(--wp-light) !important;   /* 亮 #f0f0f1 暗 #2d3748 */
+    border: 1px solid var(--wp-border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+html[data-theme="dark"] .table-container,
+html[data-theme="dark"] .subscribers-table,
+html[data-theme="dark"] .feedback-section,
+html[data-theme="dark"] .recruitment-form-wrapper,
+html[data-theme="dark"] .posts-container,
+html[data-theme="dark"] .reply-form-container{
+    background: var(--wp-light) !important;
+    border-color: var(--wp-border);
+}
+
+/* 2. 表头变量主色 + 文字白色 */
+.table-container thead,
+.subscribers-table thead,
+.posts-header,
+.reply-form-container h4{
+    background: var(--wp-primary) !important;
+    color: #fff !important;
+}
+
+/* 3. 单元格边框 & 隔行变色 */
+.table-container td,
+.table-container th,
+.subscribers-table td,
+.subscribers-table th,
+.post-card,
+.reply-card{
+    border-color: var(--wp-border) !important;
+}
+html[data-theme="dark"] .table-container tbody tr:nth-child(even),
+html[data-theme="dark"] .subscribers-table tbody tr:nth-child(even){
+    background: rgba(255,255,255,.03);
+}
+
+/* 4. 文字颜色变量化 */
+html[data-theme="dark"] .table-container *,
+html[data-theme="dark"] .subscribers-table *,
+html[data-theme="dark"] .post-title,
+html[data-theme="dark"] .post-content,
+html[data-theme="dark"] .reply-content,
+html[data-theme="dark"] .form-group label,
+html[data-theme="dark"] .feedback-section h2{
+    color: var(--wp-text) !important;
+}
+
+/* 5. 按钮/输入框暗色化 */
+html[data-theme="dark"] input,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select{
+    background: var(--wp-light);
+    color: var(--wp-text);
+    border-color: var(--wp-border);
+}
+html[data-theme="dark"] .submit-btn,
+html[data-theme="dark"] .submit-sidebar-btn,
+html[data-theme="dark"] .submit-reply-btn{
+    background: var(--wp-primary);
+    border-color: var(--wp-primary);
+}
+
+/* 6. 分页/统计暗色化 */
+html[data-theme="dark"] .page-btn,
+html[data-theme="dark"] .stat-box{
+    background: var(--wp-light);
+    color: var(--wp-text);
+    border-color: var(--wp-border);
+}
+html[data-theme="dark"] .page-btn.active{
+    background: var(--wp-primary);
+    border-color: var(--wp-primary);
+    color: #fff;
+}
+/* ===== 补漏：明确指定这几个白框变量化 ===== */
+html[data-theme="dark"] .subscribers-section,
+html[data-theme="dark"] .posts-container,
+html[data-theme="dark"] .reply-form-container,
+html[data-theme="dark"] .sidebar-section,
+html[data-theme="dark"] .forum-header,
+html[data-theme="dark"] .post-card,
+html[data-theme="dark"] .reply-card,
+html[data-theme="dark"] .stat-box,
+html[data-theme="dark"] .category-link{
+    background: var(--wp-light) !important;
+    border-color: var(--wp-border) !important;
+    color: var(--wp-text) !important;
+}
+
+/* 输入框/按钮继续变量化 */
+html[data-theme="dark"] .search-box input,
+html[data-theme="dark"] select,
+html[data-theme="dark"] .new-post-sidebar input,
+html[data-theme="dark"] .new-post-sidebar select,
+html[data-theme="dark"] .new-post-sidebar textarea{
+    background: var(--wp-light);
+    color: var(--wp-text);
+    border-color: var(--wp-border);
+}
+/* ===== 终极文字可见性补丁：强制变量色 ===== */
+/* 亮面黑字 / 暗面灰白色，优先级高于内联 style  */
+.subscribers-section h2,
+.forum-header h1,
+.forum-header p,
+.post-title,
+.post-content,
+.reply-content,
+.stat-number,
+.stat-label,
+.category-link,
+.search-box input::placeholder,
+select,
+.new-post-sidebar label,
+.new-post-sidebar input,
+.new-post-sidebar textarea{
+    color: var(--wp-text) !important;
+}
+
+/* 暗面自动反转 */
+html[data-theme="dark"] .subscribers-section h2,
+html[data-theme="dark"] .forum-header h1,
+html[data-theme="dark"] .forum-header p,
+html[data-theme="dark"] .post-title,
+html[data-theme="dark"] .post-content,
+html[data-theme="dark"] .reply-content,
+html[data-theme="dark"] .stat-number,
+html[data-theme="dark"] .stat-label,
+html[data-theme="dark"] .category-link,
+html[data-theme="dark"] .search-box input::placeholder,
+html[data-theme="dark"] select,
+html[data-theme="dark"] .new-post-sidebar label,
+html[data-theme="dark"] .new-post-sidebar input,
+html[data-theme="dark"] .new-post-sidebar textarea{
+    color: var(--wp-text) !important;   /* 灰白色 */
+}
+
+/* 背景变量化（覆盖内联 bg-light） */
+.subscribers-section,
+.forum-header,
+.posts-container,
+.sidebar-section,
+.stat-box,
+.category-link{
+    background: var(--wp-light) !important;
+}
+html[data-theme="dark"] .subscribers-section,
+html[data-theme="dark"] .forum-header,
+html[data-theme="dark"] .posts-container,
+html[data-theme="dark"] .sidebar-section,
+html[data-theme="dark"] .stat-box,
+html[data-theme="dark"] .category-link{
+    background: var(--wp-light) !important;
+}
